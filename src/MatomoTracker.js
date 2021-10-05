@@ -1,3 +1,7 @@
+import { Dimensions } from "react-native";
+import Constants from "expo-constants";
+import * as Device from "expo-device";
+
 class MatomoTracker {
   constructor(userOptions) {
     if (!userOptions.urlBase) {
@@ -177,6 +181,15 @@ class MatomoTracker {
         apiv: 1,
         uid: this.userId,
         send_image: 0,
+        ua:
+          Device.osName == "Android"
+            ? Device.osName + " " + Device.osVersion + "; " + Device.modelName
+            : Device.modelId + " " + Device.osName + "/" + Device.osVersion,
+        res:
+          Dimensions.get("window").width +
+          "x" +
+          Dimensions.get("window").height,
+        dimension1: Constants.manifest.version,
         ...data
       }).toString()
     };
