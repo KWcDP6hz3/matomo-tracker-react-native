@@ -189,7 +189,7 @@ class MatomoTracker {
           Dimensions.get("window").width +
           "x" +
           Dimensions.get("window").height,
-        dimension1: Constants.manifest.version,
+        dimension1: Constants.manifest.version + " (build " + Constants.nativeBuildVersion + ")",
         ...data
       }).toString()
     };
