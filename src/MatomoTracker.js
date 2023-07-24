@@ -1,6 +1,7 @@
 import { Dimensions } from "react-native";
 import Constants from "expo-constants";
 import * as Device from "expo-device";
+import * as Application from "expo-application";
 
 class MatomoTracker {
   constructor(userOptions) {
@@ -189,7 +190,7 @@ class MatomoTracker {
           Dimensions.get("window").width +
           "x" +
           Dimensions.get("window").height,
-        dimension1: Constants.manifest.version + " (build " + Constants.nativeBuildVersion + ")",
+        dimension1: Constants.expoConfig.version + " (build " + Application.nativeBuildVersion + ")",
         ...data
       }).toString()
     };
