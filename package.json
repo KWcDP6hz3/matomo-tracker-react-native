@@ -13,5 +13,8 @@
   "author": "Daniel <dm@tpwd.de>",
   "bugs": {
     "url": "https://github.com/donni106/matomo-tracker-react-native/issues"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1"
   }
 }
